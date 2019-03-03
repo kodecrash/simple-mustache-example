@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Mustache.js Inline Method</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js" ></script>
+    
+    <script>
+      var employee = {
+        name : "Joe",
+        age: 36,
+        occupation : "Web Developer"
+      };
+
+      function loadEmployeeDetails(){
+        var template = "<strong>Name:</strong> {{name}}<br/>"+
+                        "<strong>Age:</strong> {{age}}<br/>"+
+                        "<strong>Occupation:</strong> {{occupation}}";
+        var output = Mustache.render(template, employee);
+        document.getElementById('employeeInfo').innerHTML = output;
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="loadEmployeeDetails()">Load Employee Details</button>
+    <p id="employeeInfo"></p>
+  </body>
+</html>
